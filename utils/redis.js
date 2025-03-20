@@ -4,11 +4,7 @@ import Redis from 'ioredis';
 class RedisClient {
     constructor() {
         this.client = new Redis();
-        this.client.on('error', (err) => {
-            console.error('Redis Client Error:', err);
-        });
     }
-
 
     isAlive() {
         return this.client.status === 'ready';
